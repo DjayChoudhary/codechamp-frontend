@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import "./App.css";
+import "./css/App.css";
 import CodeEditorComponent from "./CodeEditorComponent";
 import CodeProblem from "./CodeProblem";
 
