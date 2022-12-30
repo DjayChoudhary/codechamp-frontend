@@ -13,12 +13,53 @@ header {
     border: 4px solid gray;
     height: 80vh;
 }
+
+.code-editor {
+    display: flex;
+    flex-direction: column;
+    /* height: 100vh; */
+    justify-content: stretch;
+}
+
+.w-tc-editor {
+    height: 60vh;
+}
+
+#language-options {
+    width: max-content;
+    background-color: #beb9b9;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+}
+
 .left-pane {
     /* right: 50%; */
     float: left;
-    border-right: 5px double rgb(112, 112, 112);
+    border-right: 5px solid rgb(112, 112, 112);
 }
+
 .right-pane {
-    /* left: 50%; */
-    float: right;
+    margin: 10px 10px;
+    width: 70vw;
+    /* height: 90vh; */
+    position: relative;
 }
+
+.execute {
+    position: relative;
+    margin-top: 20px;
+    /* justify-self: flex-end; */
+    bottom: 0;
+}
+
+/* textarea {
+    background-color: rgb(110, 110, 110);
+    color: whitesmoke;
+    font-family: cursive;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: small;
+
+} */
