@@ -1,18 +1,11 @@
-import axios from "axios";
-import { useState } from "react";
 import "./css/App.css";
 import CodeEditorComponent from "./CodeEditorComponent";
 import CodeProblem from "./CodeProblem";
+import axiosPostRequest from "../api/axios";
+import { RequestBody } from "../types/RequestBody";
 
-type RequestBody = {
-  id: string;
-  languageType: string;
-  codeBody: string;
-};
 export default function App() {
-  // const [requestBody, setRequestBody] = useState<RequestBody>();
-  async function handleSubmit(lang: string, code: string) {
-    console.log(lang);
+  function handleSubmit(lang: string, code: string) {
     let requestBody: RequestBody = {
       id: crypto.randomUUID(),
       languageType: lang,
@@ -20,32 +13,23 @@ export default function App() {
     };
     console.log(requestBody);
 
-    let headersList = {
-      "Content-Type": "application/json",
-    };
-
-    let response = axios
-      .post("http://localhost:8080/api/compile", JSON.stringify(requestBody), {
-        headers: headersList,
-      })
-      .then((res) => {
-        console.log(res.data);
-        return res.data;
-      });
+    let response = axiosPostRequest(requestBody);
 
     console.log(response);
   }
   return (
-    <div className="App">
-      <header>CodeChamp</header>
-      <div className="container">
-        <div className="left-pane">
+    <main className="container">
+      <header>
+        <div className="header">CodeChamp</div>
+      </header>
+      <section className="app-container">
+        <article className="problem-container">
           <CodeProblem />
-        </div>
-        <div className="right-pane">
+        </article>
+        <section className="editor-container">
           <CodeEditorComponent handleSubmit={handleSubmit} />
-        </div>
-      </div>
-    </div>
+        </section>
+      </section>
+    </main>
   );
 }
