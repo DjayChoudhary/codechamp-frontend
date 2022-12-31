@@ -1,4 +1,4 @@
-import axios, { AxiosHeaders } from "axios";
+import axios from "axios";
 import { RequestBody } from "../types/RequestBody";
 
 export default function axiosPostRequest(requestBody: RequestBody) {
