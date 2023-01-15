@@ -29,29 +29,11 @@ export default function Header() {
 
   return (
     <>
-      <header>
-        <div className="header">CodeChamp</div>
+      <header className="w-screen bg-teal-700 px-4 py-3 mb-5">
+        <div className="text-3xl tracking-wide font-semibold text-white text-center">
+          CodeChamp
+        </div>
       </header>
-
-      <table className="table-auto">
-        <thead>
-          <tr>
-            {columns.map((column) => {
-              return <td>{column}</td>;
-            })}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row) => {
-            return (
-              <tr>
-                <td>{row[0]}</td>
-                <td>{row[1]}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
     </>
   );
 }
