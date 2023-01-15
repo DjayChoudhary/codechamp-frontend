@@ -20,12 +20,10 @@ export default function App() {
     console.log(response);
   }
   return (
-    <main className="container bg-gray-400">
+    <main className="bg-gray-100 h-screen font-mono tracking-tight">
       <Header />
       <section className="app-container">
-        <article className="problem-container">
-          <CodeProblem />
-        </article>
+        <CodeProblem />
         <section className="editor-container">
           {/* <Editor handleSubmit={handleSubmit} response={response} /> */}
           {/* <CodeEditorComponent handleSubmit={handleSubmit} /> */}
