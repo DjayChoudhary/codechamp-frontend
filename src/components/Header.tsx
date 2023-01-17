@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { FiLogIn } from "react-icons/fi";
 
 export default function Header() {
   let columns = ["Response Status", "Response Body"];
@@ -29,10 +30,11 @@ export default function Header() {
 
   return (
     <>
-      <header className="w-screen bg-teal-700 px-4 py-3 mb-5">
-        <div className="text-3xl tracking-wide font-semibold text-white text-center">
+      <header className="flex w-screen bg-teal-700 px-4 py-3 mb-5 items-center">
+        <div className="text-3xl tracking-wide font-semibold text-white flex-1">
           CodeChamp
         </div>
+        <FiLogIn className="self-center text-2xl text-gray-200" />
       </header>
     </>
   );
