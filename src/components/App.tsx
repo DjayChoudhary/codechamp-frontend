@@ -4,6 +4,7 @@ import axiosPostRequest from "../api/axios";
 import { RequestBody } from "../types/RequestBody";
 import Editor from "./Editor";
 import Header from "./Header";
+import Login from "./Login";
 
 export default function App() {
   let response;
@@ -20,8 +21,9 @@ export default function App() {
     console.log(response);
   }
   return (
-    <main className="bg-gray-100 h-screen font-mono tracking-tight">
+    <main className="bg-gray-50 h-screen font-mono tracking-tight">
       <Header />
+      <Login />
       <section className="app-container">
         <CodeProblem />
         <section className="editor-container">
